@@ -1,0 +1,109 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f5f5f4;
+  --bg-tertiary: #f0efec;
+  --text: #1a1a18;
+  --text-secondary: #6b6b67;
+  --text-muted: #9e9e9a;
+  --border: rgba(0,0,0,0.1);
+  --border-strong: rgba(0,0,0,0.2);
+  --green-bg: #EAF3DE;
+  --green-border: #97C459;
+  --green-text: #27500A;
+  --green-dot: #1D9E75;
+  --amber-bg: #FAEEDA;
+  --amber-border: #EF9F27;
+  --amber-text: #633806;
+  --red-bg: #FCEBEB;
+  --red-border: #F09595;
+  --red-text: #791F1F;
+  --blue-bg: #E6F1FB;
+  --blue-border: #85B7EB;
+  --blue-text: #0C447C;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a18;
+    --bg-secondary: #222220;
+    --bg-tertiary: #2a2a28;
+    --text: #f0efec;
+    --text-secondary: #a0a09c;
+    --text-muted: #6b6b67;
+    --border: rgba(255,255,255,0.1);
+    --border-strong: rgba(255,255,255,0.2);
+    --green-bg: #17300a;
+    --green-border: #3B6D11;
+    --green-text: #C0DD97;
+    --green-dot: #1D9E75;
+    --amber-bg: #2a1e06;
+    --amber-border: #854F0B;
+    --amber-text: #FAC775;
+    --red-bg: #2a0f0f;
+    --red-border: #A32D2D;
+    --red-text: #F7C1C1;
+    --blue-bg: #062040;
+    --blue-border: #185FA5;
+    --blue-text: #B5D4F4;
+  }
+}
+
+html, body { height: 100%; }
+
+body {
+  background: var(--bg-tertiary);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input[type="text"], input:not([type]) {
+  background: var(--bg);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0 12px;
+  height: 38px;
+  color: var(--text);
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+input[type="text"]:focus, input:not([type]):focus {
+  border-color: #378ADD;
+  box-shadow: 0 0 0 3px rgba(55,138,221,0.15);
+}
+
+button {
+  background: var(--bg);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0 16px;
+  height: 38px;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.1s, transform 0.1s;
+  white-space: nowrap;
+}
+button:hover { background: var(--bg-secondary); }
+button:active { transform: scale(0.98); }
+button:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+.card {
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.mono { font-family: var(--font-geist-mono), monospace; }

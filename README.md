@@ -98,4 +98,3 @@ src/
     layout.tsx
     page.tsx
 ```
-# stock-checklist
